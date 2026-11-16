@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Mental Health Checker</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- WELCOME PAGE -->
+
+<section id="welcome" class="welcome">
+
+    <div class="welcome-card">
+
+        <div class="logo">🌸</div>
+
+        <h1>Welcome to Aura</h1>
+
+        <p>Your Friendly Mental Wellness Companion</p>
+
+        <p>Share your feelings, check your mood and discover simple wellness tips.</p>
+
+        <button onclick="guestLogin()">Continue as Guest</button>
+
+        <button class="light" onclick="showAuth('login')">
+            Login
+        </button>
+
+        <button class="light" onclick="showAuth('register')">
+            Create Account
+        </button>
+
+        <div id="authBox" class="auth-box">
+
+            <h3 id="authTitle">Login</h3>
+
+            <input id="username" placeholder="Enter Username">
+
+            <input id="password" type="password" placeholder="Enter Password">
+
+            <button onclick="submitAuth()">Continue</button>
+
+            <p id="authError"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN APPLICATION -->
+
+<section id="application" class="application">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2>🌸 Aura</h2>
+
+        <button onclick="newChat()">+ New Chat</button>
+
+        <h4>Previous Chats</h4>
+
+        <div id="history"></div>
+
+        <button class="logout" onclick="logout()">Logout</button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+        <header>
+
+            <h2>AI Mental Health Checker</h2>
+
+            <span>Welcome to your safe space 💜</span>
+
+        </header>
+
+
+        <div class="content">
+
+
+            <!-- MOOD CHECKER -->
+
+            <div class="mood-card">
+
+                <h3>How are you feeling today?</h3>
+
+                <div class="moods">
+
+                    <button onclick="checkMood('happy')">😊 Happy</button>
+
+                    <button onclick="checkMood('sad')">😔 Sad</button>
+
+                    <button onclick="checkMood('stressed')">😣 Stressed</button>
+
+                    <button onclick="checkMood('anxious')">😟 Anxious</button>
+
+                    <button onclick="checkMood('angry')">😠 Angry</button>
+
+                    <button onclick="checkMood('tired')">😴 Tired</button>
+
+                    <button onclick="checkMood('neutral')">😐 Neutral</button>
+
+                </div>
+
+                <p id="moodResult"></p>
+
+            </div>
+
+
+            <!-- CHAT AREA -->
+
+            <div id="messages" class="messages">
+
+                <div class="message bot">
+
+                    Hello! I'm Aura 🌸.
+
+                    How are you feeling today?
+
+                    You can talk about your feelings or ask me about common wellness topics.
+
+                </div>
+
+            </div>
+
+
+            <p id="status"></p>
+
+
+            <!-- CHAT INPUT -->
+
+            <div class="input-area">
+
+                <input
+                    id="message"
+                    type="text"
+                    placeholder="Message Aura..."
+                    onkeydown="if(event.key==='Enter') sendMessage()"
+                >
+
+                <button onclick="sendMessage()">Send ➤</button>
+
+            </div>
+
+
+            <p class="disclaimer">
+                This chatbot provides general wellness suggestions, not medical diagnosis.
+            </p>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

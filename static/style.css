@@ -1,0 +1,380 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f0fc;
+    color: #352e43;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    padding: 13px;
+    background: #8968bf;
+    color: white;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #7050a7;
+}
+
+/* WELCOME PAGE */
+
+.welcome {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #e9ddff, #fff0fa);
+}
+
+.welcome-card {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px #9b83bc33;
+}
+
+.logo {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.welcome-card h1 {
+    color: #8968bf;
+    margin-bottom: 15px;
+}
+
+.welcome-card p {
+    color: #82798d;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.welcome-card button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+button.light {
+    background: #eee7f8;
+    color: #7556a8;
+}
+
+button.light:hover {
+    background: #dfd3f0;
+}
+
+/* LOGIN */
+
+.auth-box {
+    display: none;
+    margin-top: 20px;
+}
+
+.auth-box h3 {
+    color: #8968bf;
+    margin-bottom: 12px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin: 7px 0;
+    border: 1px solid #ddd4e9;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #8968bf;
+}
+
+#authError {
+    color: #b64d65;
+    margin-top: 10px;
+}
+
+/* APPLICATION */
+
+.application {
+    display: none;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: #eee7f8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    color: #8060b5;
+    margin-bottom: 20px;
+}
+
+.sidebar h4 {
+    margin: 20px 0 10px;
+    font-size: 14px;
+}
+
+#history {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.chat-item.active {
+    background: #d9c9f0;
+}
+
+.chat-item span {
+    flex: 1;
+}
+
+.chat-item button {
+    padding: 5px 9px;
+    background: #f5e4eb;
+    color: #b34d65;
+}
+
+.logout {
+    margin-top: 15px;
+    background: #7153a3;
+}
+
+/* MAIN CONTENT */
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+header {
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+header h2 {
+    color: #8060b5;
+    font-size: 19px;
+}
+
+header span {
+    color: #8b7c9e;
+    font-size: 13px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    min-height: 0;
+}
+
+/* MOOD CHECKER */
+
+.mood-card {
+    background: white;
+    border-radius: 17px;
+    padding: 17px;
+    margin-bottom: 15px;
+}
+
+.mood-card h3 {
+    color: #8060b5;
+    margin-bottom: 13px;
+}
+
+.moods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.moods button {
+    background: #eee7f8;
+    color: #70519e;
+    padding: 10px;
+}
+
+#moodResult {
+    margin-top: 12px;
+    color: #70519e;
+    line-height: 1.5;
+}
+
+/* CHAT MESSAGES */
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 16px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.bot {
+    background: white;
+    margin-right: auto;
+}
+
+.user {
+    background: #e4d9f5;
+    margin-left: auto;
+}
+
+/* MESSAGE INPUT */
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    background: white;
+    padding: 12px;
+    border-radius: 15px;
+}
+
+.input-area input {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.input-area button {
+    min-width: 85px;
+}
+
+#status {
+    color: #8968bf;
+    font-size: 13px;
+    margin: 5px;
+}
+
+.disclaimer {
+    color: #998fa3;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* MOBILE DESIGN */
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        width: 115px;
+        padding: 9px;
+    }
+
+    .sidebar h2 {
+        font-size: 14px;
+    }
+
+    .sidebar h4 {
+        font-size: 11px;
+    }
+
+    .sidebar > button {
+        padding: 9px 4px;
+        font-size: 11px;
+    }
+
+    .chat-item {
+        font-size: 10px;
+        padding: 7px;
+    }
+
+    .chat-item button {
+        padding: 4px;
+    }
+
+    header {
+        padding: 13px;
+    }
+
+    header h2 {
+        font-size: 14px;
+    }
+
+    header span {
+        font-size: 10px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .message {
+        max-width: 95%;
+        font-size: 14px;
+    }
+
+    .mood-card {
+        padding: 12px;
+    }
+
+    .mood-card h3 {
+        font-size: 14px;
+    }
+
+    .moods button {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .input-area {
+        padding: 8px;
+    }
+
+    .input-area button {
+        min-width: 60px;
+        padding: 10px;
+    }
+
+}
